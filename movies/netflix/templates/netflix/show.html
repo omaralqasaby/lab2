@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="{{movie.poster.url}}" width="400" height="600" alt="">
+        <div>
+            <h2>{{movie.title}}</h2>
+            <h2>{{movie.year}}</h2>
+        </div>
+    <video controls src="{{request.scheme}}://{{request.get_host}}{{movie.video.url}}"></video>
+    
+        <div>
+            <a href="{% url 'delete' movie.id %}">Remove Movie</a>
+        </div>
+</body>
+</html>
